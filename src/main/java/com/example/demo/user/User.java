@@ -1,8 +1,8 @@
 package com.example.demo.user;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
+import java.time.Period;
 
 @Entity
 @Table(name = "users")  // Change this to avoid the reserved keyword
@@ -21,6 +21,9 @@ public class User {
     private String name;
     private LocalDate birthday;
     private String email;
+
+    @Transient
+    private int age;
 
     public User() {
     }
@@ -76,6 +79,14 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getAge() {
+        return Period.between(this.birthday, LocalDate.now()).getYears();
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     @Override

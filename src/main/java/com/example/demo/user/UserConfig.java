@@ -29,8 +29,8 @@ public class UserConfig {
 
             User marciano = new User(
                     "Marciano",
-                    LocalDate.of(2002, 7, 29),
-                    "marciaono@ysn.nl"
+                    LocalDate.of(2001, 8, 19),
+                    "marciano@ysn.nl"
 
             );
             userRepository.saveAll(
